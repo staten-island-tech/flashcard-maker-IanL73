@@ -45,14 +45,45 @@ new_car = Car("Chevrolet", "Malibu", 2024, "malibu_image.jpg")
 
 # Load existing data
 try:
-    with open("cars.json", "r") as file:
+    with open("cars.json", "r") as file:    # Takes the file
         cars_data = json.load(file)
 except FileNotFoundError:
     cars_data = []
 
 # Append new car
-cars_data.append(new_car.to_dict())
+cars_data.append(new_car.to_dict()) # sticks the new shit into it
 
 # Save updated data back to file
 with open("cars.json", "w") as file:
-    json.dump(cars_data, file, indent=4)
+    json.dump(cars_data, file, indent=4)    # puts the file back
+
+class MathUtils:
+    @staticmethod
+    def add(a,b):
+        return a + b
+
+    @staticmethod
+    def subtract(a,b):
+        return a - b
+    
+    @staticmethod
+    def multiply(a,b):
+        return a * b
+
+    @staticmethod
+    def divide(a,b):
+        if b == 0:
+            return "You can't divide by zero, fuckass"
+        return a / b
+
+"""
+    !!!KEY TAKEAWAYS!!!
+
+Classes group related data and behavior.
+Instance attributes are stored in self and defined in __init__.
+Methods allow instances to interact with their attributes.
+Static methods allow grouping of functions without requiring instance attributes.
+Classes make code more structured and reusable.
+Instances can be serialized and stored in a JSON file for future use.
+Appending new car instances to an existing JSON file ensures persistent storage without overwriting old data.
+"""
