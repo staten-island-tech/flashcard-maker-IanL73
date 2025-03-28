@@ -1,10 +1,15 @@
+import json
+
+
 while True:
     mode = input("What mode? ")
     if mode == "Student" or mode == "student" or mode == "S" or mode == "s":
         print("In Student mode.")
+        teacher = False
         break
     elif mode == "Teacher" or mode == "teacher" or mode == "t" or mode == "T":
         print("In Teacher mode.")
+        teacher = True
         break
     else:
         print("Invalid input.")
@@ -27,11 +32,12 @@ class Flash:
         else:
             print("Wrong!!")
 
-    def create(self):
-        new_question = input("Input the question for this card. ")
-        new_answer = input("Input the answer for this card. ")
-        new_card = Flash(new_question, new_answer)
-        cards_data = 
-        try:
-            with open("FlashCards.json", "w") as file:
-                cards_data json.load(file)
+    def create_new(self):
+        cards_data = [card.to_dict() for card in new_cards]
+        with open("FlashCards.json", "w") as file:
+            json.dump(cards_data,file, intent=4)
+
+if teacher == True:
+    question = input("What is the question for this flashcard?")
+    answer = input("What is the answer for this flashcard?")
+    new_card = 
