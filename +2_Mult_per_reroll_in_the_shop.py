@@ -25,19 +25,18 @@ class Flash:
     
     def to_dict(self):
         return {"Question": self.question, "Answer": self.answer}
-    
-    def quiz(self):
-        if input(f"{self.question} ") == self.answer:
-            print("Correct!")
-        else:
-            print("Wrong!!")
-
-    def create_new(self):
-        cards_data = [card.to_dict() for card in new_cards]
-        with open("FlashCards.json", "w") as file:
-            json.dump(cards_data,file, intent=4)
 
 if teacher == True:
-    question = input("What is the question for this flashcard?")
-    answer = input("What is the answer for this flashcard?")
-    new_card = 
+    while True:
+        cards = []
+        question = input("What is the question for this flashcard?")
+        answer = input("What is the answer for this flashcard?")
+        new_card = Flash(question, answer)
+        cards.append(new_card.to_dict())
+        cont = input("more card?")
+        if cont == "no" or cont == "No":
+            break
+    cards_data = [card.to_dict() for card in cards]
+
+    with open("cards.json", "w") as file:
+        json.dump(cards_data, file, indent=4)
