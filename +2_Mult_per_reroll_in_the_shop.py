@@ -1,6 +1,5 @@
 import json
 
-
 while True:
     mode = input("What mode? ")
     if mode == "Student" or mode == "student" or mode == "S" or mode == "s":
@@ -27,16 +26,33 @@ class Flash:
         return {"Question": self.question, "Answer": self.answer}
 
 if teacher == True:
-    while True:
+    new_or_add = input("Would you like to create a new card set or add to an old one? ")
+    if new_or_add == "new" or new_or_add == "New":
         cards = []
-        question = input("What is the question for this flashcard?")
-        answer = input("What is the answer for this flashcard?")
-        new_card = Flash(question, answer)
-        cards.append(new_card.to_dict())
-        cont = input("more card?")
-        if cont == "no" or cont == "No":
-            break
-    cards_data = [card.to_dict() for card in cards]
-
-    with open("cards.json", "w") as file:
-        json.dump(cards_data, file, indent=4)
+        while True:
+            question = input("What is the question for this flashcard?")
+            answer = input("What is the answer for this flashcard?")
+            new_card = Flash(question, answer)
+            cards.append(new_card.to_dict())
+            cont = input("more card?")
+            if cont == "no" or cont == "No":
+                break
+        with open("cards.json", "w") as file:
+            json.dump(cards, file, indent=4)
+    elif new_or_add == "add" or new_or_add == "Add":
+        cards = []
+        while True:
+            question = input("What is the question for this flashcard?")
+            answer = input("What is the answer for this flashcard?")
+            new_card = Flash(question, answer)
+            cards.append(new_card.to_dict())
+            cont = input("more card?")
+            if cont == "no" or cont == "No":
+                break
+        try:
+            with open("cards.json", "r") as file:
+                cards_data = json.load(file)
+        except FileNotFoundError:
+            cards_data = []
+        cards_data.append(cards)
+        with open("cars.json",)
