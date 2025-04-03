@@ -1,12 +1,17 @@
 [
     {
-        "Question": "cheese",
-        "Answer": "queso"
+        "Question": "1 + 1 = ",
+        "Answer": "2",
+        "Number": 1
     },
-    [
-        {
-            "Question": "what is the mitochondria of the cell",
-            "Answer": "powerhouse"
-        }
-    ]
+    {
+        "Question": "2 + 2 = ",
+        "Answer": "4",
+        "Number": 2
+    },
+    {
+        "Question": "3 + 3 = ",
+        "Answer": "6",
+        "Number": 3
+    }
 ]

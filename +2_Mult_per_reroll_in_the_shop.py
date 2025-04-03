@@ -66,3 +66,30 @@ if teacher == True:
 
         with open("cards.json", "w") as file:
             json.dump(cards_data, file, indent=4)
+
+if teacher == False:
+    while True:
+        streak = 0
+        score = 0
+        with open("cards.json", "r") as file:
+            cards_data = json.load(file)
+        for card in cards_data:
+            guess = input(card["Question"])
+            if guess == card["Answer"]:
+                print("correct! :D")
+                streak = streak + 1
+                if streak >= 1:
+                    score = score + (100 * streak)
+                else:
+                    score =+ 100
+                print(f"Score: {score}!")
+                print(f"Streak: {streak}!")
+                print()
+            else:
+                print("incorrect >:(")
+                streak = 0
+                print("streak reset")
+                print(streak)
+                print()
+        print("FINISH!!")
+        break
