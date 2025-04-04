@@ -1,34 +1,22 @@
 [
     {
-        "Question": "8 x 1 =",
-        "Answer": "8"
+        "Question": "I'm a goofy goober",
+        "Answer": "rock"
     },
     {
-        "Question": "8 x 2 =",
-        "Answer": "16"
+        "Question": "who lives in a pineapple under the sea",
+        "Answer": "spongebob squarepants"
     },
     {
-        "Question": "8 x 3 =",
-        "Answer": "24"
+        "Question": "according to all known laws of aviation",
+        "Answer": "there is no way a bee should be able to fly"
     },
     {
-        "Question": "8 x 4 =",
-        "Answer": "32"
+        "Question": "it's tiny wings are ",
+        "Answer": "too small to lift its fat body off the ground"
     },
     {
-        "Question": "40 =",
-        "Answer": "40"
-    },
-    {
-        "Question": "8 x 6 =",
-        "Answer": "48"
-    },
-    {
-        "Question": "8 x 7 =",
-        "Answer": "52"
-    },
-    {
-        "Question": "8 x 8 =",
-        "Answer": "64"
+        "Question": "but of course, the bee flies anyway",
+        "Answer": "becuase they don't care what humans think is impossible"
     }
 ]
